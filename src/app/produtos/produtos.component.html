@@ -1,0 +1,31 @@
+
+<body>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<div class=" col-sm container">
+<h2>Coloque um produto</h2>
+<form [formGroup]="pForm" (ngSubmit)="createProducts()">
+    <tr>
+        <span>Insira o Nome : </span>
+        <input class="myinput" type="text" formControlName="nome" id="">
+      </tr>
+      <tr>
+          <span>Insira a Quantidade : </span>
+        <input class="myinput" type="text" formControlName="quantidade" id="">
+      </tr>
+     
+      <tr>
+        <span>Insira o valor :</span>
+      <input  class="myinput" type="text" formControlName="valor" id="">
+    </tr>
+    <tr>
+      <span>Selecione o nome tipo :</span>
+    <select class="browser-default custom-select" (change)="selectOption($event.target.value)" formControlName="id_tipo" >
+      <option>Escolha um tipo de produto</option>
+      <option *ngFor="let tipo of nome_tipos;" [ngValue]="tipo.id_tipo" >{{tipo.nome}}</option>
+    </select>
+   
+  </tr>
+    <button class="btn" type="submit">Criar Produto</button>
+</form>
+</div>
+</body>

@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<body>
+  <input id="search_input" (keydown)="Search()" style="width: 1000px;" class="form-control md-10 pd-10" placeholder="Pesquise nossos produtos aqui" aria-label="Search" aria-describedby="basic-addon1">
+<div class="table-responsive">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Quantidade em estoque</th>
+      <th scope="col">Tipo do Produto</th>
+      <th scope="col">Valor</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let prod of produtos;">
+      <th scope="row">1</th>
+      <td class="nomes">{{prod.nome}}</td>
+      <td>{{prod.quantidade}}</td>
+      <td>{{prod.nome_tipo}}</td>
+      <td>R$ {{prod.valor}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</body>
